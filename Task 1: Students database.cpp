@@ -3,12 +3,11 @@
 using namespace std;
 
 const int MAX_NAME=14; // Assume a name contains at most 14 characters
-enum Gender{MALE,FEMALE};
-char first_name[MAX_NAME+1];    //global vars
-char last_name[MAX_NAME+1];
+enum Gender{ MALE = 'm', FEMALE = 'f'};
+string first_name;    //global vars
+string last_name;
 double GPA;
 int ID;
-
 
 
 struct Date{
@@ -16,32 +15,48 @@ struct Date{
     int month;
     int day;
 };
-struct  Student                              //student Info
+
+struct  Student                              // Info
 {
     int ID;
-    char first_name[MAX_NAME+1];
-    char last_name[MAX_NAME+1];
+    string first_name;
+    string last_name;
     Date birth_date;
     Gender gender;
     double GPA;
 };
+    Student info;
 
 
 void InputStudent(Student info){
-    Date birth_date;
-    Gender gender;
+    cin>>info.ID;
+    cin>>info.first_name;
+    cout<<info.first_name<<endl;
+    cin>>info.last_name;
+    cin>>info.birth_date.year;
+    cin>>info.birth_date.month;
+    cin>>info.birth_date.day;
 
+    //cin>>info.gender;
+    cin>>info.GPA;
 }
 
-void OutputStudent(Student){
+void OutputStudent(Student info){
+    //cout<<info.ID<<endl;
+    //cout<<info.first_name<<"adasd"<<endl;
 
+    //cout<<info.last_name<<endl;
+    //cout<<info.birth_date.year<<endl;
+    //cout<<info.birth_date.month<<endl;
+    //cout<<info.birth_date.day<<endl;
+    //cout<<info.GPA<<endl;
 }
 
 
 int main()
 {
-    Student info;
-    cin>>info;
-    InputStudent(Student info);
+    Student s;
+    InputStudent(s);
+    OutputStudent(s);
     return 0;
 }
