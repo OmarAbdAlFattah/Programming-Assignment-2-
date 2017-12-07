@@ -25,38 +25,37 @@ struct  Student                              // Info
     Gender gender;
     double GPA;
 };
-    Student info;
+    Student* s;
 
 
-void InputStudent(Student info){
-    cin>>info.ID;
-    cin>>info.first_name;
-    cout<<info.first_name<<endl;
-    cin>>info.last_name;
-    cin>>info.birth_date.year;
-    cin>>info.birth_date.month;
-    cin>>info.birth_date.day;
+void InputStudent(Student *s){
+    cin>>s->ID;
+    cin>>s->first_name;
+    cin>>s->last_name;
+    cin>>s->birth_date.year;
+    cin>>s->birth_date.month;
+    cin>>s->birth_date.day;
 
     //cin>>info.gender;
-    cin>>info.GPA;
+    cin>>s->GPA;
 }
 
-void OutputStudent(Student info){
-    //cout<<info.ID<<endl;
-    //cout<<info.first_name<<"adasd"<<endl;
-
-    //cout<<info.last_name<<endl;
-    //cout<<info.birth_date.year<<endl;
-    //cout<<info.birth_date.month<<endl;
-    //cout<<info.birth_date.day<<endl;
-    //cout<<info.GPA<<endl;
+void OutputStudent(Student *s){
+    cout<<s->ID<<endl;
+    cout<<s->first_name<<"adasd"<<endl;
+    cout<<s->last_name<<endl;
+    cout<<s->birth_date.year<<endl;
+    cout<<s->birth_date.month<<endl;
+    cout<<s->birth_date.day<<endl;
+    cout<<s->GPA<<endl;
 }
 
 
 int main()
 {
-    Student s;
+    Student* s;
     InputStudent(s);
     OutputStudent(s);
     return 0;
 }
+
